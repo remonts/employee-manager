@@ -1,0 +1,5 @@
+{
+    "employee": [
+      { "id": 1, "name": "Jackson Servace", "email": "jackson@jackson.com", "jobTitle": "Python", "phone": "35997586541", "imageUrl": "jhahah", "employeeCode": "01" }
+    ]
+}
