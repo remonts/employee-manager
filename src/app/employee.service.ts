@@ -18,4 +18,13 @@ export class EmployeeService {
   public addEmployees(employee: Employee): Observable<Employee> {
     return this.http.post<Employee>(`http://localhost:3000/employee`, employee);
   }
+
+  public updateEmployees(employee: Employee): Observable<Employee> {
+    return this.http.put<Employee>(`http://localhost:3000/employee`, employee);
+  }
+
+  public deleteEmployees(id: number): Observable<void> {
+    return this.http.delete<void>(`http://localhost:3000/employee/${id}`);
+  }
+
 }
