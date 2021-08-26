@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Employee } from 'employee';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,22 +10,24 @@ import { Observable } from 'rxjs';
 
 export class EmployeeService {
 
+  private apiServerUrl = environment.apiBaseUrl;
+
   constructor(private http: HttpClient) {}
 
   public getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(`http://localhost:3000/employee`);
+    return this.http.get<Employee[]>(`${this.apiServerUrl}/employee`);
   }
 
   public addEmployees(employee: Employee): Observable<Employee> {
-    return this.http.post<Employee>(`http://localhost:3000/employee`, employee);
+    return this.http.post<Employee>(`${this.apiServerUrl}/employee`, employee);
   }
 
   public updateEmployees(employee: Employee): Observable<Employee> {
-    return this.http.put<Employee>(`http://localhost:3000/employee`, employee);
+    return this.http.put<Employee>(`${this.apiServerUrl}/employee`, employee);
   }
 
   public deleteEmployees(id: number): Observable<void> {
-    return this.http.delete<void>(`http://localhost:3000/employee/${id}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/employee/${id}`);
   }
 
 }
