@@ -62,7 +62,7 @@
         <div class="card-body">
           <div class="float-right btn-group btn-group-sm">
             <a
-              href="#"
+              (click)="onOpenModal(employee, 'edit')"
               class="btn btn-primary tooltips"
               data-placement="top"
               data-toggle="tooltip"
@@ -70,7 +70,7 @@
               ><i class="fa fa-pencil"></i>
             </a>
             <a
-              href="#"
+            (click)="onOpenModal(employee, 'delete')"
               class="btn btn-secondary tooltips"
               data-placement="top"
               data-toggle="tooltip"
